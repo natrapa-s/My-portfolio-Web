@@ -1,6 +1,21 @@
 import streamlit as st
 st.set_page_config(page_title="My Portfolio", layout="wide")
-
+st.markdown("""
+    <style>
+    /* เปลี่ยนสีปุ่ม */
+    div.stButton > button:first-child {
+        background-color: #0068C9; /* สีน้ำเงิน (เปลี่ยนรหัสสีได้) */
+        color: white;               /* สีตัวอักษร */
+        border: none;
+        border-radius: 8px;         /* ความมนของขอบ */
+    }
+    /* เปลี่ยนสีตอนเอาเมาส์ไปจ่อ (Hover) */
+    div.stButton > button:first-child:hover {
+        background-color: #004B91;  /* สีน้ำเงินเข้มขึ้น */
+        color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
 if 'page' not in st.session_state:
     st.session_state.page = 'home'
 
@@ -14,8 +29,7 @@ def show_home():
         st.markdown("""
         ### Data Analyst/Data Science
         """)
-        st.markdown("""
-                    I’m a third-year Computer Science student passionate about uncovering hidden patterns in raw data to help businesses maximize growth and minimize potential losses.""")
+        st.markdown("""Hello I’m **Natrapa**, a third-year Computer Science student passionate about uncovering hidden patterns in raw data to help businesses maximize growth and minimize potential losses.""")
     with col2:
         st.write("") 
         st.write("") 
@@ -752,3 +766,11 @@ elif st.session_state.page == 'walmart':
     show_walmart_project()
 elif st.session_state.page == 'oil':
     show_oil_production_project()
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        <h1>Thank You!</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
