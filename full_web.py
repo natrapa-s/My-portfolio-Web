@@ -172,7 +172,7 @@ def show_nasa_project():
         st.image("img/NASA/overview_FD004_2.png", caption="Dashboard(Selected Unit)", use_container_width=True)
         st.divider()
         st.header("Key Insights")
-        st.image("img/NASA/deep_learning.png", caption="Deep Learning:Error Analysis & Trainig Loss", use_container_width=True)
+        st.image("img/NASA/deep_learning_edited.png", caption="Deep Learning:Error Analysis & Trainig Loss", use_container_width=True)
         st.divider()
 
         st.header("Technical Skills")
@@ -284,7 +284,7 @@ def show_nasa_project():
         print(f"XGBoost -> RMSE: {rmse_xgb:.2f}, R2: {r2_xgb:.2f}")
     ''' ,language='python')
             
-        st.write("For the complex dataset (FD004), standard Machine Learning hit a limit. I **experimented with Deep Learning (LSTM)** to capture time-series patterns better. It was a challenging step to learn how to reshape 3D data and build a Neural Network.")
+        st.write("For the FD004 time-series dataset, I evaluated classical Machine Learning models as baselines. Since equipment degradation depends on temporal patterns across operating cycles, I additionally **experimented** with an LSTM model to capture sequential dependencies that static models may miss. While **the LSTM showed only marginal improvement** , this experiment helped assess the trade-offs between model performance, interpretability, and deployment complexity.")
 
         with st.expander("LSTM"):
             st.code('''
